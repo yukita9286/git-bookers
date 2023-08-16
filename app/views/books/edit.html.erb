@@ -1,8 +1,8 @@
 
-<h1>編集画面</h1>
+<h1>Editing Book</h1>
 
 <% if @book.errors.any? %>
-  <%= @book.errors.count %>errors
+  <%= @book.errors.count %>error
   <ul>
     <% @book.errors.full_messages.each do |message| %>
       <li><%= message %></li>
@@ -12,15 +12,15 @@
 
 <%= form_with model: @book do |f| %>
 
-  <h4>タイトル</h4>
+  <h4>Title</h4>
   <%= f.text_field :title %>
 
-  <h4>本文</h4>
+  <h4>Body</h4>
   <%= f.text_area :body %>
 
   <%= f.submit 'Update Book' %>
 
 <% end %>
 
-<%= link_to "Show", book_path(@book.id) %>
+<%= link_to 'Show', book_path(@book.id) %>
 <a class="Back" href="/books">Back</a>
